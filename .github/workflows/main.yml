@@ -18,10 +18,11 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Set up Xcode
-      uses: actions/setup-xcode@v2
-      with:
-        xcode-version: ${{ env.XC_VERSION }}
+    - name: Install Xcode
+      run: sudo xcode-select --install || true
+
+    - name: Select Xcode version
+      run: sudo xcode-select -s /Applications/Xcode_${XC_VERSION}.app
 
     - name: Build iOS app
       run: |
