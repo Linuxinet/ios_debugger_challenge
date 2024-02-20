@@ -21,7 +21,8 @@ jobs:
       run: sudo xcode-select --install || true
 
     - name: Select Xcode version
-      run: sudo xcode-select -s /Applications/Xcode_12.4.app
+      run: sudo xcode-select -s /Applications/Xcode.app
+
 
     - name: Build iOS app
       run: |
